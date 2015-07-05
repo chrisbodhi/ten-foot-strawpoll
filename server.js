@@ -40,7 +40,7 @@ app.use('/js', browserify('./client/scripts', {
 */
 var sequelize = new Sequelize(process.env.DATABASE, process.env.USERNAME, process.env.PASSWORD, {
   host: process.env.HOST,
-  dialet: 'postgres',
+  dialect: 'postgres',
   pool: {
     max: 5,
     min: 0,
