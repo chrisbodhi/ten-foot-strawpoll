@@ -1,0 +1,28 @@
+{
+  "generator-yeogurt": {
+    "config": {
+      "projectName": "ten-foot-strawpoll",
+      "versionControl": "git",
+      "useServer": true,
+      "dbOption": "sql",
+      "dbHost": "localhost",
+      "dbPort": "5432",
+      "dbName": "nitrous",
+      "dbUser": "nitrous",
+      "dbPass": "",
+      "useAuth": false,
+      "singlePageApplication": true,
+      "jsFramework": "react",
+      "useJsx": true,
+      "cssOption": "sass",
+      "sassSyntax": "scss",
+      "useJsdoc": false,
+      "useKss": false,
+      "useTesting": true,
+      "testFramework": "jasmine",
+      "dbType": "postgres",
+      "jsOption": "browserify"
+    },
+    "version": "0.14.6"
+  }
+}

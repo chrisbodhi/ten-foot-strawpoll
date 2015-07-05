@@ -1,10 +1,18 @@
-node_modules
+# Logs
+logs
 *.log
-dist
-client/bower_components
-.tmp
-.grunt
-server/config/secrets.js
-.DS_Store
-.yo-rc.json
-test/scripts
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Coverage tools
+lib-cov
+coverage
+
+# Dependency directory
+node_modules
+
+# Generated css
+public/styles/*.css
