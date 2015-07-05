@@ -16,3 +16,6 @@ node_modules
 
 # Generated css
 public/styles/*.css
+
+# env var
+.env

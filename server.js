@@ -1,9 +1,12 @@
+require('dotenv').load();
+
 var express = require('express'),
 	browserify = require('browserify-middleware'),
 	reactify = require('reactify'),
 	less = require('less-middleware'),
 	nunjucks = require('nunjucks'),
-	config = require('./client/config');
+	config = require('./client/config'),
+  Sequelize = require('sequelize');
 
 // initialise express
 var app = express();
@@ -35,6 +38,15 @@ app.use('/js', browserify('./client/scripts', {
 	set up any additional server routes (api endpoints, static pages, etc.)
 	here before the catch-all route for index.html below.
 */
+var sequelize = new Sequelize(process.env.DATABASE, process.env.USERNAME, process.env.PASSWORD, {
+  host: process.env.HOST,
+  dialet: 'postgres',
+  pool: {
+    max: 5,
+    min: 0,
+    idle: 10000
+  }
+});
 
 app.get('*', function(req, res) {
 	// this route will respond to all requests with the contents of your index
