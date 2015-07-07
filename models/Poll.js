@@ -11,12 +11,11 @@ var Question = sequelize.define('question', {
 });
 
 var Response = sequelize.define('response', {
+  count: {
+    type: Sequelize.INTEGER
+  },
   response: {
     type: Sequelize.STRING
-  },
-  voterMacAddr: {
-    type: Sequelize.STRING,
-    field: 'voter_mac_addr'
   }
 });
 
