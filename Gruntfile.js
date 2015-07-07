@@ -15,6 +15,7 @@ module.exports = function(grunt){
     jshint: {
       all: [
         'client/**/*.js',
+        'components/*',
         'Gruntfile.js', 
         'models/*.js',  
         'server.js'
@@ -44,6 +45,7 @@ module.exports = function(grunt){
       js: {
         files: [
           'client/**/*.js',
+          'components/*',
           'Gruntfile.js', 
           'models/*.js',  
           'server.js'
