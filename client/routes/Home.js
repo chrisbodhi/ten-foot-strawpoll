@@ -1,23 +1,15 @@
 React = require('react');
 
+var Form = require('../components/Form.react.jsx'),
+    PollList = require('../components/PollList.react.jsx');
+
 var Home = React.createClass({
-  getInitialState: function() {
-    return {value: "hola mundo"};
-  },
-  onSubmit: function() {
-    // save to db...
-  },
-	render: function() {
+  render: function() {
 		return (
       /* jshint ignore:start */
-			<div id="poll-form">
-        <form onsubmit="">
-          <label>Question for polling: </label>
-          <input type="text" id="question" placeholder="How much change is in my couch?" required autofocus />
-          <input type="text" name="response" placeholder="None." required />
-          <input type="text" name="response" placeholder="All of it." required />
-          <input type="submit" />
-        </form>
+      <div id="main">
+			  <Form />
+        <PollList />
       </div>
       /* jshint ignore:end */
 		);
