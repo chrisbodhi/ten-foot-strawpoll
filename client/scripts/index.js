@@ -33,8 +33,8 @@ var App = React.createClass({
       /* jshint ignore:start */
 			<div className="container">
 				<Header />
+        <Router.RouteHandler/>
 				<PageNav />
-				<Router.RouteHandler/>
 			</div>
       /* jshint ignore:end */
 		);
