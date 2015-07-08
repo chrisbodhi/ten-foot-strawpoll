@@ -3,18 +3,20 @@ extends layout
 block content
   h1= title
 
-  h2 Creating a new poll
-  form(action="/questions/create" method="post")
-    label 
-      | Poll Question
-      input(type="text" name="question" required)
-    label
-      | A Possible Response
-      input(type="text" name="response-one" required)
-    label
-      | Another Response
-      input(type="text" name="response-two" required)
-    input(type="submit")
+  .row
+    h2.col-md-offset-3 Creating a new poll
+    form.col-sm-10.col-md-6.col-md-offset-3(action="/questions/create" method="post")
+      .form-group
+        label Poll Question
+        input.form-control(type="text" name="question" placeholder="Favorite Musketeer?" required)
+      .form-group
+        label A Possible Response
+        input.form-control(type="text" name="response-one" placeholder="D'Arty" required)
+      .form-group
+        label Another Response
+        input.form-control(type="text" name="response-two" placeholder="The candy bar" required)
+      .form-group
+        button.btn.btn-default(type="submit") Ask Away!
 
   h2 Existing Polls
 
