@@ -5,9 +5,15 @@ block content
 
   h2 Creating a new poll
   form(action="/questions/create" method="post")
-    input(type="text" name="question" required)
-    input(type="text" name="response-one" required)
-    input(type="text" name="response-two" required)
+    label 
+      | Poll Question
+      input(type="text" name="question" required)
+    label
+      | A Possible Response
+      input(type="text" name="response-one" required)
+    label
+      | Another Response
+      input(type="text" name="response-two" required)
     input(type="submit")
 
   h2 Existing Polls
