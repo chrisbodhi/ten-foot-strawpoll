@@ -48,6 +48,16 @@ var sequelize = new Sequelize(process.env.DATABASE, process.env.USERNAME, proces
   }
 });
 
+sequelize
+  .authenticate()
+  .then(function(err) {
+    if (!!err) {
+      console.log('Unable to connect to the database:', err);
+    } else {
+      console.log('Connection has been established successfully.');
+    }
+  });
+
 app.get('*', function(req, res) {
 	// this route will respond to all requests with the contents of your index
 	// template. Doing this allows react-router to render the view in the app.

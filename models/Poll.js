@@ -1,4 +1,13 @@
-var sequelize = require('sequelize');
+var Sequelize = require('sequelize'),
+    sequelize = new Sequelize(process.env.DATABASE, process.env.USERNAME, process.env.PASSWORD, {
+      host: process.env.HOST,
+      dialect: 'postgres',
+      pool: {
+        max: 5,
+        min: 0,
+        idle: 10000
+      }
+    });
 
 var Question = sequelize.define('question', {
   question: {
@@ -21,3 +30,5 @@ var Response = sequelize.define('response', {
 
 Question.hasMany(Response);
 Response.belongsTo(Question);
+
+sequelize.sync();
