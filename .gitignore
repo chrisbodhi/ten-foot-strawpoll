@@ -19,3 +19,6 @@ public/styles/*.css
 
 # env var
 .env
+
+# test db
+db.development.sqlite
