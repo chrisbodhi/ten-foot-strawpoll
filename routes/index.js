@@ -1,13 +1,13 @@
-var models  = require('../models');
-var express = require('express');
-var router  = express.Router();
+var models  = require('../models'),
+    express = require('express'),
+    router  = express.Router();
 
 router.get('/', function(req, res) {
   models.Question.findAll({
     include: [ models.Response ]
   }).then(function(questions) {
     res.render('index', {
-      title: 'Express',
+      title: 'Ten Foot Strawpoll',
       questions: questions
     });
   });
