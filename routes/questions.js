@@ -1,12 +1,22 @@
-var models  = require('../models');
-var express = require('express');
-var router  = express.Router();
+"use strict";
+
+var models  = require('../models'),
+    express = require('express'),
+    router  = express.Router();
 
 router.post('/create', function(req, res) {
   models.Question.create({
     question: req.param('question')
   }).then(function() {
-    res.redirect('/');
+    models.Response.create({
+      answer: req.param('response-one')
+    }).then(function() {
+      models.Response.create({
+        answer: req.param('response-two')
+      })
+    }).then(function() {
+      res.redirect('/');      
+    })
   });
 });
 
