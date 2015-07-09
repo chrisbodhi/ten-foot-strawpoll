@@ -1,9 +1,9 @@
 'use strict';
 
-var app      = require('../../app');
-var Bluebird = require('bluebird');
-var expect   = require('expect.js');
-var request  = require('supertest');
+var app      = require('../../app'),
+    Bluebird = require('bluebird'),
+    expect   = require('expect.js'),
+    request  = require('supertest');
 
 describe('question creation page', function () {
   beforeEach(function () {
@@ -27,11 +27,11 @@ describe('question creation page', function () {
 
   it('lists the responses for the question', function (done) {
     this.models.Question.create({ question: 'who' }).bind(this).then(function (question) {
-      return this.models.Response.create({ answer: 'response 1', QuestionId: question.id });
-    }).then(function (question) {
-      return this.models.Response.create({ answer: 'response 2', QuestionId: question.id });
+      return this.models.Response.create(
+        { answer: 'response 1', QuestionId: question.id },
+        { answer: 'response 2', QuestionId: question.id } );
     }).then(function () {
-      request(app).get('/').expect(/response 1 2/, done);
+      request(app).get('/').expect(/response 2/, done);
     });
   });
 });
