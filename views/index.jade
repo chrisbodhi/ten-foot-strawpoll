@@ -29,6 +29,7 @@ block content
           form(action="/questions/" + question.id + "/responses/create" method="post" style="display: inline")
             each response in question.Responses
               li
+                input(class="poll" type="radio" name="vote-" + response.id)
                 label 
-                  = response.title
-                input(type="radio" name="vote-" + response.id)
+                  =response.answer
+            button(type="sumbit") Vote
